@@ -20,7 +20,7 @@ const Contact = ({animate}) => (
             >
                 Contact
             </motion.h1>
-            <motion.p className= "mt-5 mb-[300px] text-2xl font-bold text-gray-50 md:text-3xl"
+            <motion.p className= "mt-5 mb-[150px] md:mb-[300px] text-2xl font-bold text-gray-50 md:text-3xl"
                 initial = {{y:25, opacity:0}}
                 animate = {{y:0, opacity:1}}
                 exit = {{y:-25, opacity:0}}
