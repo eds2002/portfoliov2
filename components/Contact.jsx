@@ -28,11 +28,11 @@ const Contact = ({animate}) => (
             >
                 Interested? Let&apos;s get in touch
             </motion.p>
-            <div className = "flex flex-wrap justify-between w-full gap-12 md:gap-20">
+            <div className = "flex flex-wrap justify-between w-full gap-2 md:gap-20">
                 <Link href = "https://www.linkedin.com/in/eduardo-sanchez-93a191227/">
                     <a target = "_blank">
-                        <div className = "w-[125px] h-[100px] rounded-md ring-0 ring-indigo-600 hover:ring-2 flex flex-col justify-center items-start px-3 transition cursor-pointer">
-                            <motion.p className = "mr-auto text-xl font-light"
+                        <div className = "w-[80px] h-[80px] md:w-[125px] md:h-[100px] rounded-md ring-0 ring-indigo-600 hover:ring-2 flex flex-col justify-center items-start px-1 md:px-3 transition cursor-pointer">
+                            <motion.p className = "text-base font-light "
                                 initial = {{x:-15, opacity:0}}
                                 animate = {{x:0, opacity:1}}
                                 exit = {{x:15, opacity:0}}
@@ -49,7 +49,7 @@ const Contact = ({animate}) => (
                 </Link>
                 <Link href = "https://www.linkedin.com/in/eduardo-sanchez-93a191227/">
                     <a target = "_blank">
-                        <div className = "w-[125px] h-[100px] rounded-md ring-0 ring-indigo-600 hover:ring-2 flex flex-col justify-center items-start px-3 transition cursor-pointer">
+                    <div className = "w-[80px] h-[80px] md:w-[125px] md:h-[100px] rounded-md ring-0 ring-indigo-600 hover:ring-2 flex flex-col justify-center items-start px-1 md:px-3 transition cursor-pointer">
                             <motion.p className = "mr-auto text-xl font-light"
                                 initial = {{x:-15, opacity:0}}
                                 animate = {{x:0, opacity:1}}
@@ -67,7 +67,7 @@ const Contact = ({animate}) => (
                 </Link>
                 <Link href = "mailto:es23jr@gmail.com ">
                     <a target = "_blank">
-                        <div className = "w-[125px] h-[100px] rounded-md ring-0 ring-indigo-600 hover:ring-2 flex flex-col justify-center items-start px-3 transition cursor-pointer">
+                    <div className = "w-[80px] h-[80px] md:w-[125px] md:h-[100px] rounded-md ring-0 ring-indigo-600 hover:ring-2 flex flex-col justify-center items-start px-1 md:px-3 transition cursor-pointer">
                             <motion.p className = "mr-auto text-xl font-light"
                                 initial = {{x:-15, opacity:0}}
                                 animate = {{x:0, opacity:1}}
@@ -79,13 +79,13 @@ const Contact = ({animate}) => (
                                 animate = {{x:0, opacity:1}}
                                 exit = {{x:15, opacity:0}}
                                 transition = {{type: 'spring', duration:1,delay:0.10}}
-                            >es23jr@gmail.com</motion.p>
+                            >es23jr@gmail</motion.p>
                         </div>
                     </a>
                 </Link>
                 <Link href = "tel:973-464-3310">
                     <a>
-                        <div className = "w-[125px] h-[100px] rounded-md ring-0 ring-indigo-600 hover:ring-2 flex flex-col justify-center items-start px-3 transition cursor-pointer">
+                    <div className = "w-[80px] h-[80px] md:w-[125px] md:h-[100px] rounded-md ring-0 ring-indigo-600 hover:ring-2 flex flex-col justify-center items-start px-1 md:px-3 transition cursor-pointer">
                             <motion.p className = "mr-auto text-xl font-light"
                                 initial = {{x:-15, opacity:0}}
                                 animate = {{x:0, opacity:1}}
