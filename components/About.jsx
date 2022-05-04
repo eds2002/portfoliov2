@@ -13,14 +13,14 @@ const about = ({animate}) => (
           exit = {{opacity:0}}
           transition = {{type:'linear', duration: 0.5}}
         >
-            <motion.h1 className = "text-xs font-bold text-gray-400"
+            <motion.h1 className = "font-mono text-xs text-indigo-600"
               initial = {{y:25, opacity:0}}
               animate = {{y:0, opacity:1}}
               exit = {{y:-25, opacity:0}}
               transition = {{type: 'spring', duration:1}}
             >About</motion.h1>
             <div>
-                <motion.p className= "mb-5 text-2xl font-bold text-gray-50 md:text-3xl"
+                <motion.p className= "mb-5 text-2xl font-bold text-white md:text-3xl"
                   initial = {{y:25, opacity:0}}
                   animate = {{y:0, opacity:1}}
                   exit = {{y:-25, opacity:0}}
@@ -47,7 +47,7 @@ const about = ({animate}) => (
                   exit = {{y:-25, opacity:0}}
                   transition = {{type: 'spring', duration:1, delay: 0.20}}
                 >Here are some of the technologies I use</motion.p>
-                <motion.div className = "flex flex-col flex-wrap  h-[75px] md:h-[100px] text-gray-400  text-xs md:text-base gap-x-2 gap-y-1"
+                <motion.div className = "flex flex-col flex-wrap  h-[60%] md:h-[75px] md:h-[100px] text-gray-400  text-xs md:text-base gap-x-2 gap-y-1"
                   initial = {{y:25, opacity:0}}
                   animate = {{y:0, opacity:1}}
                   exit = {{y:-25, opacity:0}}
@@ -60,6 +60,7 @@ const about = ({animate}) => (
                     <li>Git & GitHub</li>
                     <li>Redux</li>
                     <li>Firebase</li>
+                    <li>TypeScript</li>
                 </motion.div>
             </div>
         </motion.div>

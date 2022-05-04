@@ -3,9 +3,7 @@ import Link from 'next/link'
 import About from '../components/About'
 import Hero from '../components/Hero'
 import Experience from '../components/Experience'
-import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBreadSlice, faCaretRight, faTimes, falinkedin} from '@fortawesome/free-solid-svg-icons'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Contact from '../components/Contact'
 export default function Home() {
@@ -13,11 +11,16 @@ export default function Home() {
   const [dispAbout, setDispAbout] = useState(false);
   const [dispExperience, setDispExperience] = useState(false)
   const [dispContact, setDispContact] = useState(false)
-
   const [showLabel, setShowLabel] = useState(false)
 
-  const [nav, setNav] = useState(false);
+  useEffect(()=>{
+    setShowLabel(true);
+    setTimeout(()=>{
+      setShowLabel(false)
+    },2000)
+  },[])
 
+  // Nav page switching logic
   const handleClick = (e) =>{
     switch(e){
       case 'Home':
@@ -83,17 +86,21 @@ export default function Home() {
       <Head>
         <title>Eduardo Sanchez - Portfolio</title>
         <meta name="description" content="Hi, I'm a front end developer based in NJ. Learn more about me." />
+        <script src="https://kit.fontawesome.com/0995f9dee8.js" crossorigin="anonymous"></script>
         <link rel="icon" href="/fav.png" />
       </Head>
+
+      {/* Body */}
       <div className = "max-w-[1920px] mx-auto p-[100px] h-full flex relative">
         <div className = "hidden md:w-[30%] md:block">
           <nav className = "flex flex-col gap-[50px]">
-            <Link href = "/"><a className = {`text-base self-start transition-all ${dispHome ? 'text-indigo-600' : 'text-white'}`} onClick = {()=>handleClick("Home")}>Home</a></Link>
-            <Link href = "/"><a className = {`text-base self-start ${dispAbout ? 'text-indigo-600' : 'text-white'} transition-all`} onClick = {()=>handleClick("About")}>About</a></Link>
-            <Link href = "/"><a className = {`text-base self-start transition-all ${dispExperience ? 'text-indigo-600' : 'text-white'}`} onClick = {()=>handleClick("Experience")}>Experience</a></Link>
-            <Link href = "/"><a className = {`text-base self-start transition-all ${dispContact ? 'text-indigo-600' : 'text-white'}`} onClick = {()=>handleClick("Contact")}>Contact</a></Link>
+            <Link href = "/"><a className = {`text-base self-start transition-all ${dispHome ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Home")}>Home</a></Link>
+            <Link href = "/"><a className = {`text-base self-start ${dispAbout ? 'text-indigo-600' : 'text-gray-400'} transition-all font-mono`} onClick = {()=>handleClick("About")}>About</a></Link>
+            <Link href = "/"><a className = {`text-base self-start transition-all ${dispExperience ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Experience")}>Experience</a></Link>
+            <Link href = "/"><a className = {`text-base self-start transition-all ${dispContact ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Contact")}>Contact</a></Link>
             {/* Nav indicator */}
-            <div className = {`absolute top-[98px] left-0 w-[6px] h-[30px] bg-indigo-600 rounded-lg transition ease-in-out duration-600
+            {/* On desktop, little sliding shape indicating what page user is currently on */}
+            <div className = {`absolute top-[94px] left-0 w-[4px] h-[40px] bg-white transition ease-in-out duration-600
             ${dispHome ? 'translate-y-0' : dispAbout ? 'translate-y-[72px]' : dispExperience ? 'translate-y-[147px]' : dispContact ? 'translate-y-[220px]' : ''}`}> {/* [147px] [220px]*/}  
             </div>
 
@@ -102,10 +109,10 @@ export default function Home() {
               <h1 className = "text-base font-bold">Ed.</h1>
               <div className = "flex gap-5 mt-5">
                 <Link href = "https://www.linkedin.com/in/eduardo-sanchez-93a191227/">
-                  <a target = "_blank" className = "text-base font-thin transition hover:text-indigo-600">In</a>
+                  <a target = "_blank" className = "font-mono text-[15px] transition hover:text-indigo-600">In</a>
                 </Link>
                 <Link href = "https://github.com/eds2002">
-                  <a target = "_blank" className = "text-base font-thin transition hover:text-indigo-600 ">Git</a>
+                  <a target = "_blank" className = "font-mono text-[15px] transition hover:text-indigo-600 ">Git</a>
                 </Link>
               </div>
             </div>
@@ -123,7 +130,8 @@ export default function Home() {
         <Contact animate = {dispContact}/>
       </div>
       
-      {/* Mobile Nav Right  */}
+      {/* Mobile Nav Right Indicitors  */}
+      {/* On link click, nav title appears briefly sliding from the right to left */}
        <div className = "absolute  top-[50%] bottom-[50%] right-0 flex items-end justify-center md:hidden p-[25px] flex-col gap-10 z-50">
           <div className = "p-2 cursor-pointer" onClick = {()=>handleClick('Home')}>
             <div className = {`inner-circle ${dispHome ? 'bg-white' : 'bg-[hsla(360,0%,50%,0.5)]'} relative`}>
@@ -131,7 +139,7 @@ export default function Home() {
               </div>
               <AnimatePresence>
                 {dispHome & showLabel ? 
-                  <motion.h1 className = "absolute left-[-55px] italic opacity-80 text-xs"
+                  <motion.h1 className = "absolute left-[-55px] text-xs font-mono text-indigo-300"
                     initial = {{x:7, opacity:0}}
                     animate = {{x:0, opacity:1}}
                     exit = {{x:7, opacity:0}}
@@ -150,7 +158,7 @@ export default function Home() {
               </div>
               <AnimatePresence>
                 {dispAbout & showLabel ? 
-                  <motion.h1 className = "absolute left-[-55px] italic opacity-80 text-xs"
+                  <motion.h1 className = "absolute left-[-60px] text-xs font-mono text-indigo-300"
                     initial = {{x:7, opacity:0}}
                     animate = {{x:0, opacity:1}}
                     exit = {{x:7, opacity:0}}
@@ -169,7 +177,7 @@ export default function Home() {
               </div>
               <AnimatePresence>
                 {dispExperience & showLabel ? 
-                  <motion.h1 className = "absolute left-[-80px] italic opacity-80 text-xs"
+                  <motion.h1 className = "absolute left-[-100px] text-xs font-mono text-indigo-300"
                     initial = {{x:7, opacity:0}}
                     animate = {{x:0, opacity:1}}
                     exit = {{x:7, opacity:0}}
@@ -189,7 +197,7 @@ export default function Home() {
               </div>
               <AnimatePresence>
                 {dispContact & showLabel ? 
-                  <motion.h1 className = "absolute left-[-80px] italic opacity-80 text-xs"
+                  <motion.h1 className = "absolute left-[-80px] text-xs font-mono text-indigo-300"
                     initial = {{x:7, opacity:0}}
                     animate = {{x:0, opacity:1}}
                     exit = {{x:7, opacity:0}}
