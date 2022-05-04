@@ -86,7 +86,6 @@ export default function Home() {
       <Head>
         <title>Eduardo Sanchez - Portfolio</title>
         <meta name="description" content="Hi, I'm a front end developer based in NJ. Learn more about me." />
-        <script src="https://kit.fontawesome.com/0995f9dee8.js" crossorigin="anonymous"></script>
         <link rel="icon" href="/fav.png" />
       </Head>
 
