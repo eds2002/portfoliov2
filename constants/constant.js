@@ -1,5 +1,12 @@
 export const projects = [
     {
+        name: "User Management System",
+        about:"A user management CRUD application.",
+        tools: ["React Js", "Tailwind Css", "MySQL", "Node Js", "Express"],
+        resposLink : "https://github.com/eds2002/usermanagement",
+        webLink : "https://aquamarine-dragon-f2a57c.netlify.app/"
+    },
+    {
         name: "Thousand Prompts",
         about: "A Journal Pwa, Thousand Prompts combines C.B.T therapy and journaling.",
         tools: ["HTML", "Css", "Scss", "Javscript", "Firebase", "Firebase Hosting", "PWA"],
