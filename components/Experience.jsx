@@ -41,10 +41,15 @@ const Experience = ({animate}) => (
                   >
                     <h1 className = "font-mono text-base font-bold text-indigo-500 text-md" >{project.name}</h1>
                     <p className = "my-2 text-base">{project.about}</p>
+                    <div className = "flex flex-wrap items-center w-full gap-2 text-xs mb-[15px] mt-[10px]">
+                      {project.tools.map((tool)=>(
+                        <p className = "font-bold text-indigo-200 rounded-lg px-[10px] h-[20px] bg-indigo-900 flex items-center justify-center">{tool}</p>
+                      ))}
+                    </div>
                     <div>
-                      <Link href = {project.webLink}><a target = "_blank"><button type = "text" className = "w-[100%] py-[5px] bg-indigo-900 hover:hover:bg-[hsla(242,47%,34%,0.4)] border border-indigo-900 active:bg-transparent font-mono rounded-md my-1 transition">Visit Website</button></a></Link>
+                      <Link href = {project.webLink}><a target = "_blank"><button type = "text" className = "w-[100%] py-[5px] bg-indigo-900 hover:hover:bg-[hsla(242,47%,34%,0.4)] border border-indigo-900 active:bg-transparent font-mono rounded-md my-1 transition md:text-base text-xs">Visit Website</button></a></Link>
                       <Link href = {project.resposLink}>
-                        <a target = "_blank"><button type = "text" className = "w-[100%] py-[5px] bg-indigo-900 hover:bg-[hsla(242,47%,34%,0.4)] border border-indigo-900 active:bg-transparent font-mono rounded-md my-1 transition">Visit Git</button></a>
+                        <a target = "_blank"><button type = "text" className = "w-[100%] py-[5px] bg-indigo-900 hover:bg-[hsla(242,47%,34%,0.4)] border border-indigo-900 active:bg-transparent font-mono rounded-md my-1 transition md:text-base text-xs">Visit Git</button></a>
                       </Link>
                     </div>
                     
