@@ -42,8 +42,8 @@ const Experience = ({animate}) => (
                     <h1 className = "font-mono text-base font-bold text-indigo-500 text-md" >{project.name}</h1>
                     <p className = "my-2 text-base">{project.about}</p>
                     <div className = "flex flex-wrap items-center w-full gap-2 text-xs mb-[15px] mt-[10px]">
-                      {project.tools.map((tool)=>(
-                        <p className = "font-bold text-indigo-200 rounded-lg px-[10px] h-[20px] bg-indigo-900 flex items-center justify-center">{tool}</p>
+                      {project.tools.map((tool, i)=>(
+                        <p key = {i} className = "font-bold text-indigo-200 rounded-lg px-[10px] h-[20px] bg-indigo-900 flex items-center justify-center">{tool}</p>
                       ))}
                     </div>
                     <div>
