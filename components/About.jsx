@@ -59,8 +59,8 @@ const about = ({animate}) => (
                     <li>Tailwind Css</li>
                     <li>Git & GitHub</li>
                     <li>Redux</li>
-                    <li>Firebase</li>
-                    <li>TypeScript</li>
+                    <li>Node Js</li>
+                    <li>MySQL</li>
                 </motion.div>
             </div>
         </motion.div>
