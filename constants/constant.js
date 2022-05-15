@@ -2,7 +2,7 @@ export const projects = [
     {
         name: "User Management System",
         about:"A user management CRUD application.",
-        tools: ["React Js", "Tailwind Css", "MySQL", "Node Js", "Express"],
+        tools: ["React Js", "Tailwind Css", "MySQL", "Node Js", "Express", "Redux"],
         resposLink : "https://github.com/eds2002/usermanagement",
         webLink : "https://aquamarine-dragon-f2a57c.netlify.app/"
     },
