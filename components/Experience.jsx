@@ -33,23 +33,23 @@ const Experience = ({animate}) => (
               </motion.p>
               <div className = "grid h-full gap-4 mt-5 lg:grid-cols-2">
                 {projects.map((project, i)=>(
-                  <motion.div key = {i}className = "p-[25px] rounded-lg h-[100%] max-h-96 flex flex-col justify-between border border-indigo-900"
+                  <motion.div key = {i} className = {`p-[25px] rounded-lg h-[100%] max-h-96 flex flex-col justify-between border ${project.pinned === true ? 'border-amber-500' : 'border-indigo-900'}`}
                     initial = {{y:25, opacity:0}}
                     animate = {{y:0, opacity:1}}
                     exit = {{y:-25, opacity:0}}
                     transition = {{type: 'spring', duration:1,delay:0.15}}
                   >
-                    <h1 className = "font-mono text-base font-bold text-indigo-500 text-md" >{project.name}</h1>
+                    <h1 className = {`font-mono text-base font-bold ${project.pinned === true ? "text-amber-500" : "text-indigo-500"} text-md`} >{project.name}</h1>
                     <p className = "my-2 text-base">{project.about}</p>
                     <div className = "flex flex-wrap items-center w-full gap-2 text-xs mb-[15px] mt-[10px]">
                       {project.tools.map((tool, i)=>(
-                        <p key = {i} className = "font-bold text-indigo-200 rounded-lg px-[10px] h-[20px] bg-indigo-900 flex items-center justify-center">{tool}</p>
+                        <p key = {i} className = {`font-bold ${project.pinned === true ? "text-amber-100 bg-amber-500": "text-indigo-200 bg-indigo-900"} rounded-lg px-[10px] h-[20px] flex items-center justify-center`}>{tool}</p>
                       ))}
                     </div>
                     <div>
-                      <Link href = {project.webLink}><a target = "_blank"><button type = "text" className = "w-[100%] py-[5px] bg-indigo-900 hover:hover:bg-[hsla(242,47%,34%,0.4)] border border-indigo-900 active:bg-transparent font-mono rounded-md my-1 transition md:text-base text-xs">Visit Website</button></a></Link>
+                      <Link href = {project.webLink}><a target = "_blank"><button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-900 hover:bg-indigo-900/50 border-indigo-900 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-base text-xs`}>Visit Website</button></a></Link>
                       <Link href = {project.resposLink}>
-                        <a target = "_blank"><button type = "text" className = "w-[100%] py-[5px] bg-indigo-900 hover:bg-[hsla(242,47%,34%,0.4)] border border-indigo-900 active:bg-transparent font-mono rounded-md my-1 transition md:text-base text-xs">Visit Git</button></a>
+                        <a target = "_blank"><button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-900 hover:bg-indigo-900/50 border-indigo-900 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-base text-xs`}>Visit Git</button></a>
                       </Link>
                     </div>
                     

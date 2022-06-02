@@ -1,5 +1,13 @@
 export const projects = [
     {
+        name: "Blog.",
+        "about": "A fully functional Blog app. Read more on the blog site!",
+        tools: ["Next Js", "Node Js", "Express Js", "Styled Components", "Tailwind Css", "Mysql", "Heroku", "Netlify"],
+        resposLink: 'https://github.com/eds2002/Blog-Crud-Fullstack-app',
+        webLink: 'https://github.com/eds2002/Blog-Crud-Fullstack-app',
+        pinned:true,
+    },
+    {
         name: "User Management System",
         about:"A user management CRUD application.",
         tools: ["React Js", "Tailwind Css", "MySQL", "Node Js", "Express", "Redux"],

@@ -98,10 +98,6 @@ export default function Home() {
             <Link href = "/"><a className = {`text-base self-start transition-all ${dispExperience ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Experience")}>Experience</a></Link>
             <Link href = "/"><a className = {`text-base self-start transition-all ${dispContact ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Contact")}>Contact</a></Link>
             {/* Nav indicator */}
-            {/* On desktop, little sliding shape indicating what page user is currently on */}
-            <div className = {`absolute top-[94px] left-0 w-[4px] h-[40px] bg-white transition ease-in-out duration-600
-            ${dispHome ? 'translate-y-0' : dispAbout ? 'translate-y-[72px]' : dispExperience ? 'translate-y-[147px]' : dispContact ? 'translate-y-[220px]' : ''}`}> {/* [147px] [220px]*/}  
-            </div>
 
             {/* Desktop Logo & Socials */}
             <div className = "absolute bottom-0 left-0 right-0 p-[100px]">
