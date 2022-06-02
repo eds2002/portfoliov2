@@ -4,7 +4,7 @@ export const projects = [
         "about": "A fully functional Blog app. Read more on the blog site!",
         tools: ["Next Js", "Node Js", "Express Js", "Styled Components", "Tailwind Css", "Mysql", "Heroku", "Netlify"],
         resposLink: 'https://github.com/eds2002/Blog-Crud-Fullstack-app',
-        webLink: 'https://github.com/eds2002/Blog-Crud-Fullstack-app',
+        webLink: 'https://blogappfrontend.vercel.app/',
         pinned:true,
     },
     {
