@@ -30,7 +30,13 @@ const Experience = ({animate}) => (
                 transition = {{type: 'spring', duration:1,delay:0.10}}
               >
                 Here is some of my work.
-              </motion.p>
+              </motion.p> 
+
+              {/* <div className = "flex text-xs gap-x-3 mt-[10px]">
+                <p className = "bg-indigo-600 text-white px-[20px] text-center rounded-xl py-[3px] font-bold cursor-pointer">All</p>
+                <p className = "bg-gray-600 text-gray-200 px-[20px] text-center rounded-xl py-[3px] font-bold cursor-pointer">C.R.U.D</p>
+                <p className = "bg-gray-600 text-gray-200 px-[20px] text-center rounded-xl py-[3px] font-bold cursor-pointer">API</p>
+              </div> */}
               <div className = "grid h-full gap-4 mt-5 lg:grid-cols-2">
                 {projects.map((project, i)=>(
                   <motion.div key = {i} className = {`p-[25px] rounded-lg h-[100%] max-h-96 flex flex-col justify-between border ${project.pinned === true ? 'border-amber-500' : 'border-indigo-900'}`}
@@ -43,7 +49,7 @@ const Experience = ({animate}) => (
                     <p className = "my-2 text-base">{project.about}</p>
                     <div className = "flex flex-wrap items-center w-full gap-2 text-xs mb-[15px] mt-[10px]">
                       {project.tools.map((tool, i)=>(
-                        <p key = {i} className = {`font-bold ${project.pinned === true ? "text-amber-100 bg-amber-500": "text-indigo-200 bg-indigo-900"} rounded-lg px-[10px] h-[20px] flex items-center justify-center`}>{tool}</p>
+                        <p key = {i} className = {`font-bold ${project.pinned === true ? "text-amber-100 bg-amber-500": "text-indigo-200 bg-indigo-900"} font-mono rounded-lg px-[10px] h-[20px] flex items-center justify-center`}>{tool}</p>
                       ))}
                     </div>
                     <div>
@@ -52,10 +58,6 @@ const Experience = ({animate}) => (
                         <a target = "_blank"><button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-900 hover:bg-indigo-900/50 border-indigo-900 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-base text-xs`}>Visit Git</button></a>
                       </Link>
                     </div>
-                    
-                    {/* {project.tools.map((tool)=>(
-                      <li>{tool}</li>
-                    ))} */}
                   </motion.div>
                 ))}
               </div>
