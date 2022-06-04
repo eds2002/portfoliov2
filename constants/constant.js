@@ -1,12 +1,12 @@
 export const projects = [
     {
-        name: "Blog.",
+        name: "CRUD Blog App",
         date: 'May 26, 2022',
         about: "A fully functional Blog app. Read more on the blog site!",
         tools: ["Next Js", "Node Js", "Express Js", "Styled Components", "Tailwind Css", "Mysql", "Heroku", "Netlify"],
         resposLink: 'https://github.com/eds2002/Blog-Crud-Fullstack-app',
         webLink: 'https://blogappfrontend.vercel.app/',
-        pinned:false,
+        featured:true,
         type: 'crud'
     },
     {
@@ -16,7 +16,9 @@ export const projects = [
         tools: ["React Js", "Tailwind Css", "MySQL", "Node Js", "Express", "Redux"],
         resposLink : "https://github.com/eds2002/usermanagement",
         webLink : "https://aquamarine-dragon-f2a57c.netlify.app/",
-        type:'crud'
+        featured:true,
+        type:'crud',
+        
 
     },
     {
@@ -26,7 +28,8 @@ export const projects = [
         tools: ["HTML", "Css", "Scss", "Javscript", "Firebase", "Firebase Hosting", "PWA"],
         resposLink: "https://github.com/eds2002/thousand-prompts",
         webLink: "https://www.thousandprompts.com",
-        type:'api'
+        featured:true,
+        type:'api',
     },
     {
         name: "Ticket Sensei",
@@ -35,19 +38,22 @@ export const projects = [
         tools: ["Next JS","Ticket Master Api", "Styled Components"],
         resposLink: "https://github.com/eds2002/ticketsensei",
         webLink: "https://ticketsense.vercel.app/",
+        featured:false,
     },
-    // {
-    //     name: "Fake Ecom",
-    //     about: "A fake ecom headphone store.",
-    //     tools: ["Next JS", "Sanity IO", "Stripe", "Vercel"],
-    //     resposLink: "https://github.com/eds2002/fake_ecom",
-    //     webLink: "https://fake-ecom.vercel.app/",
-    // },
-    // {
-    //     name: "Yoga Website",
-    //     about: "A website designed for my local yoga place.",
-    //     tools: ["Next JS", "Tailwind Css", "Netlify","Git"],
-    //     resposLink: "https://github.com/eds2002/yoga-landing-page",
-    //     webLink: "https://radiant-kulfi-361fc2.netlify.app/",
-    // }
+    {
+        name: "Fake Ecom",
+        about: "A fake ecom headphone store.",
+        tools: ["Next JS", "Sanity IO", "Stripe", "Vercel"],
+        resposLink: "https://github.com/eds2002/fake_ecom",
+        webLink: "https://fake-ecom.vercel.app/",
+        featured:false,
+    },
+    {
+        name: "Yoga Website",
+        about: "A website designed for my local yoga place.",
+        tools: ["Next JS", "Tailwind Css", "Netlify","Git"],
+        resposLink: "https://github.com/eds2002/yoga-landing-page",
+        webLink: "https://radiant-kulfi-361fc2.netlify.app/",
+        featured:false,
+    }
 ]

@@ -37,28 +37,75 @@ const Experience = ({animate}) => (
                 <p className = "bg-gray-600 text-gray-200 px-[20px] text-center rounded-xl py-[3px] font-bold cursor-pointer">C.R.U.D</p>
                 <p className = "bg-gray-600 text-gray-200 px-[20px] text-center rounded-xl py-[3px] font-bold cursor-pointer">API</p>
               </div> */}
-              <div className = "grid h-full gap-4 mt-5 lg:grid-cols-2">
+              <div className = "grid h-full grid-cols-2 gap-4 mt-5">
                 {projects.map((project, i)=>(
-                  <motion.div key = {i} className = {`p-[25px] rounded-lg h-[100%] max-h-96 flex flex-col justify-between border ${project.pinned === true ? 'border-amber-500' : 'border-indigo-900'}`}
-                    initial = {{y:25, opacity:0}}
-                    animate = {{y:0, opacity:1}}
-                    exit = {{y:-25, opacity:0}}
-                    transition = {{type: 'spring', duration:1,delay:0.15}}
-                  >
-                    <h1 className = {`font-mono text-base font-bold ${project.pinned === true ? "text-amber-500" : "text-indigo-500"} text-md`} >{project.name}</h1>
-                    <p className = "my-2 text-base">{project.about}</p>
-                    <div className = "flex flex-wrap items-center w-full gap-2 text-xs mb-[15px] mt-[10px]">
-                      {project.tools.map((tool, i)=>(
-                        <p key = {i} className = {`font-bold ${project.pinned === true ? "text-amber-100 bg-amber-500": "text-indigo-200 bg-indigo-900"} font-mono rounded-lg px-[10px] h-[20px] flex items-center justify-center`}>{tool}</p>
-                      ))}
-                    </div>
-                    <div>
-                      <Link href = {project.webLink}><a target = "_blank"><button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-900 hover:bg-indigo-900/50 border-indigo-900 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-base text-xs`}>Visit Website</button></a></Link>
-                      <Link href = {project.resposLink}>
-                        <a target = "_blank"><button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-900 hover:bg-indigo-900/50 border-indigo-900 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-base text-xs`}>Visit Git</button></a>
-                      </Link>
-                    </div>
-                  </motion.div>
+                  <>
+                    {project.featured && (
+                      <div className = "col-span-2">
+                        <motion.div key = {i} className = {`p-[25px] rounded-lg h-[100%] max-h-96 flex flex-col md:flex-row justify-between border border-indigo-900 gap-x-10`}
+                          initial = {{y:25, opacity:0}}
+                          animate = {{y:0, opacity:1}}
+                          exit = {{y:-25, opacity:0}}
+                          transition = {{type: 'spring', duration:1,delay:0.15}}
+                        >
+                          <div className = "flex-1">
+                            <h1 className = {`font-mono text-base font-bold ${project.pinned === true ? "text-amber-500" : "text-indigo-500"} text-md`} >{project.name}</h1>
+                            <p className = "my-2 text-base">{project.about}</p>
+                            <div className = "flex flex-wrap items-center w-full gap-2 text-xs mb-[15px] mt-[10px]">
+                              {project.tools.map((tool, i)=>(
+                                <p key = {i} className = {`font-bold text-gray-500 font-mono rounded-lg flex items-center justify-center`}>{tool}</p>
+                              ))}
+                            </div>
+                          </div>
+                          <div className = "md:flex-1 md:flex md:flex-col md:justify-center">
+                            <Link href = {project.webLink}><a target = "_blank"><button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-900 hover:bg-indigo-900/50 border-indigo-900 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-base text-xs`}>Website</button></a></Link>
+                            <Link href = {project.resposLink}>
+                              <a target = "_blank"><button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-900 hover:bg-indigo-900/50 border-indigo-900 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-base text-xs`}>Git</button></a>
+                            </Link>
+                          </div>
+                        </motion.div>
+                      </div>
+                    )}
+                  </>
+                ))}
+                <h1 className = "w-full col-span-2 text-xl font-bold text-center my-[50px]">Other portfolio worthy projects</h1>
+                {projects.map((project, i)=>(
+                  <>
+                    {!project.featured && (
+                      <div className = "col-span-2 md:col-span-1">
+                        <motion.div key = {i} className = {`p-[25px] rounded-lg h-[100%] max-h-96 flex flex-col justify-between border border-gray-800 bg-gray-600/10 hover:bg-gray-600/20 transition group`}
+                          initial = {{y:25, opacity:0}}
+                          animate = {{y:0, opacity:1}}
+                          exit = {{y:-25, opacity:0}}
+                          transition = {{type: 'spring', duration:1,delay:0.15}}
+                        >
+                          <h1 className = {`font-mono text-base font-bold text-gray-500 group-hover:text-white text-md transition`} >{project.name}</h1>
+                          <p className = "my-2 text-base text-gray-300">{project.about}</p>
+                          <div className = "flex flex-wrap items-center w-full gap-2 text-xs mb-[15px] mt-[10px]">
+                            {project.tools.map((tool, i)=>(
+                              <p key = {i} className = {`font-bold text-gray-500 font-mono rounded-lg flex items-center justify-center`}>{tool}</p>
+                            ))}
+                          </div>
+                          <div className = "flex justify-between gap-x-5">
+                            <Link href = {project.webLink}>
+                              <a target = "_blank" className = "w-full">
+                                <button type = "text" className = {`w-[100%] py-[5px] bg-gray-600 hover:bg-gray-600/50 border-gray-600 active:bg-transparent border font-mono rounded-md my-1 transition  text-xs`}>
+                                  Website
+                                </button>
+                              </a>
+                            </Link>
+                            <Link href = {project.resposLink}>
+                              <a target = "_blank" className = "w-full">
+                                <button type = "text" className = {`w-[100%] py-[5px] bg-gray-600 hover:bg-gray-600/50 border-gray-600 active:bg-transparent border font-mono rounded-md my-1 transition  text-xs`}>
+                                  Git
+                                </button>
+                              </a>
+                            </Link>
+                          </div>
+                        </motion.div>
+                      </div>
+                    )}
+                  </>
                 ))}
               </div>
             </div>
