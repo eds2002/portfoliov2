@@ -93,15 +93,15 @@ export default function Home() {
       <div className = "max-w-[1920px] mx-auto p-[100px] h-full flex relative">
         <div className = "hidden md:w-[30%] md:block">
           <nav className = "flex flex-col gap-[50px]">
-            <Link href = "/"><a className = {`text-base self-start transition-all ${dispHome ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Home")}>Home</a></Link>
-            <Link href = "/"><a className = {`text-base self-start ${dispAbout ? 'text-indigo-600' : 'text-gray-400'} transition-all font-mono`} onClick = {()=>handleClick("About")}>About</a></Link>
-            <Link href = "/"><a className = {`text-base self-start transition-all ${dispExperience ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Experience")}>Experience</a></Link>
-            <Link href = "/"><a className = {`text-base self-start transition-all ${dispContact ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Contact")}>Contact</a></Link>
+            <Link href = "/"><a className = {`text-sm self-start transition-all ${dispHome ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Home")}>Home</a></Link>
+            <Link href = "/"><a className = {`text-sm self-start ${dispAbout ? 'text-indigo-600' : 'text-gray-400'} transition-all font-mono`} onClick = {()=>handleClick("About")}>About</a></Link>
+            <Link href = "/"><a className = {`text-sm self-start transition-all ${dispExperience ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Experience")}>Experience</a></Link>
+            <Link href = "/"><a className = {`text-sm self-start transition-all ${dispContact ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Contact")}>Contact</a></Link>
             {/* Nav indicator */}
 
             {/* Desktop Logo & Socials */}
             <div className = "absolute bottom-0 left-0 right-0 p-[100px]">
-              <h1 className = "text-base font-bold">Ed.</h1>
+              <h1 className = "text-base font-extrabold">Ed.</h1>
               <div className = "flex gap-5 mt-5">
                 <Link href = "https://www.linkedin.com/in/eduardo-sanchez-93a191227/">
                   <a target = "_blank" className = "font-mono text-[15px] transition hover:text-indigo-600">In</a>

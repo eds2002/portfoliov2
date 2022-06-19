@@ -32,11 +32,6 @@ const Experience = ({animate}) => (
                 Here is some of my work.
               </motion.p> 
 
-              {/* <div className = "flex text-xs gap-x-3 mt-[10px]">
-                <p className = "bg-indigo-600 text-white px-[20px] text-center rounded-xl py-[3px] font-bold cursor-pointer">All</p>
-                <p className = "bg-gray-600 text-gray-200 px-[20px] text-center rounded-xl py-[3px] font-bold cursor-pointer">C.R.U.D</p>
-                <p className = "bg-gray-600 text-gray-200 px-[20px] text-center rounded-xl py-[3px] font-bold cursor-pointer">API</p>
-              </div> */}
               <div className = "grid h-full grid-cols-2 gap-4 mt-5">
                 {projects.map((project, i)=>(
                   <>
