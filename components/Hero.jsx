@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 const Hero = ({animate}) => (
   <AnimatePresence>
     {animate && (
-      <div className = "relative flex items center justify-center ml-auto w-full lg:w-[80%] h-[100vh] p-[100px] section hero" id = "home" >
+      <div className = "relative flex items center justify-center ml-auto w-full lg:w-[80%] h-[100vh] p-[75px] section hero" id = "home" >
         
         <motion.div className = {`h-full flex-col justify-between  w-full flex mx-auto`}
           initial = {{opacity:0}}
@@ -18,7 +18,7 @@ const Hero = ({animate}) => (
               exit = {{y:-25, opacity:0}}
               transition = {{type: 'spring', duration:1}}
             >Eduardo Sanchez</motion.p>
-            <motion.p className = "text-7xl leading-[1] text-white font-medium"
+            <motion.p className = "text-5xl lg:text-7xl leading-[1] text-white font-medium"
               initial = {{y:25, opacity:0}}
               animate = {{y:0, opacity:1}}
               exit = {{y:-25, opacity:0}}

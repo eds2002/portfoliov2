@@ -4,7 +4,7 @@ import {motion, AnimatePresence} from 'framer-motion'
 const about = ({animate}) => (
   <AnimatePresence>
     {animate && (
-      <div className = "relative ml-auto lg:w-[80%] h-[100vh] p-[100px] section about" id = 'about'>
+      <div className = "relative ml-auto lg:w-[80%] h-[100vh] p-[75px] section about" id = 'about'>
         <motion.div className = "flex flex-col justify-between w-full h-full"
           initial = {{opacity:0}}
           animate = {{opacity:1}}

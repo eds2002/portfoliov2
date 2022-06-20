@@ -6,7 +6,7 @@ import {motion, AnimatePresence} from 'framer-motion'
 const Experience = ({animate}) => (
   <AnimatePresence>
     {animate && (
-      <div className = "relative ml-auto lg:w-[80%] p-[100px] section experience h-full" id = 'experience' >
+      <div className = "relative ml-auto lg:w-[80%] p-[75px] section experience h-full" id = 'experience' >
         <motion.div className = "flex flex-col mx-auto"
           initial = {{opacity:0}}
           animate = {{opacity:1}}
@@ -46,7 +46,7 @@ const Experience = ({animate}) => (
                             <p className = "my-2 text-sm text-gray-300">{project.about}</p>
                             <div className = "flex flex-wrap items-center w-full gap-y-2 gap-x-5 text-xs mb-[15px] mt-[10px]">
                               {project.tools.map((tool, i)=>(
-                                <p key = {i} className = {`text-white font-mono rounded-sm flex items-center justify-center bg-indigo-600 text-[12px] py-[1px] px-2 `}>{tool}</p>
+                                <p key = {i} className = {`text-gray-500 font-mono rounded-sm flex items-center justify-center text-[12px] `}>{tool}</p>
                               ))}
                             </div>
                           </div>
@@ -86,7 +86,7 @@ const Experience = ({animate}) => (
                           <p className = "my-2 text-base text-gray-300">{project.about}</p>
                           <div className = "flex flex-wrap items-center w-full gap-2 text-xs mb-[15px] mt-[10px]">
                             {project.tools.map((tool, i)=>(
-                              <p key = {i} className = {`font-bold text-white font-mono rounded-sm flex items-center justify-center bg-gray-500 px-2 py-[1px]`}>{tool}</p>
+                              <p key = {i} className = {`font-bold text-gray-500 font-mono rounded-sm flex items-center justify-center`}>{tool}</p>
                             ))}
                           </div>
                           <div className = "flex justify-between gap-x-5">

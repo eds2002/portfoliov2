@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Link from 'next/link'
 
 const Contact = ({animate, contactRef}) => (
-    <section className = "relative ml-auto lg:w-[80%] h-[100vh] p-[100px] section contact" id = 'contact'>
+    <section className = "relative ml-auto lg:w-[80%] h-[100vh] p-[75px] section contact" id = 'contact'>
     <motion.div className = 'flex flex-col w-full h-full mx-auto'
         initial = {{opacity:0}}
         animate = {{opacity:1}}
