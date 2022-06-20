@@ -2,13 +2,11 @@ import React from 'react'
 import { projects } from '../constants/constant'
 import Link from 'next/link'
 import {motion, AnimatePresence} from 'framer-motion'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
-const Experience = ({animate, experienceRef}) => (
+const Experience = ({animate}) => (
   <AnimatePresence>
     {animate && (
-      <div className = "relative w-full p-[100px] snap-start" ref = {experienceRef}>
+      <div className = "relative ml-auto lg:w-[80%] p-[100px] section experience h-full" id = 'experience' >
         <motion.div className = "flex flex-col mx-auto"
           initial = {{opacity:0}}
           animate = {{opacity:1}}
@@ -36,7 +34,7 @@ const Experience = ({animate, experienceRef}) => (
                 {projects.map((project, i)=>(
                   <>
                     {project.featured && (
-                      <div className = "col-span-2">
+                      <div className = "col-span-2" key = {i}>
                         <motion.div key = {i} className = {`p-[25px] rounded-lg h-[100%] max-h-96 flex flex-col md:flex-row justify-between border border-indigo-900/50 hover:border-indigo-900 gap-x-10 transition group`}
                           initial = {{y:25, opacity:0}}
                           animate = {{y:0, opacity:1}}
@@ -44,25 +42,25 @@ const Experience = ({animate, experienceRef}) => (
                           transition = {{type: 'spring', duration:1,delay:0.15}}
                         >
                           <div className = "flex-1">
-                            <h1 className = {`font-mono text-base font-bold text-indigo-500/80 group-hover:text-indigo-600 text-md`} >{project.name}</h1>
-                            <p className = "my-2 text-base text-gray-300">{project.about}</p>
+                            <h1 className = {`font-bold text-indigo-500/80 group-hover:text-indigo-600`} >{project.name}</h1>
+                            <p className = "my-2 text-sm text-gray-300">{project.about}</p>
                             <div className = "flex flex-wrap items-center w-full gap-y-2 gap-x-5 text-xs mb-[15px] mt-[10px]">
                               {project.tools.map((tool, i)=>(
-                                <p key = {i} className = {`text-gray-500 font-mono rounded-lg flex items-center justify-center`}>{tool}</p>
+                                <p key = {i} className = {`text-white font-mono rounded-sm flex items-center justify-center bg-indigo-600 text-[12px] py-[1px] px-2 `}>{tool}</p>
                               ))}
                             </div>
                           </div>
                           <div className = "flex justify-between md:flex-1 md:flex md:flex-col md:justify-center gap-x-5">
                             <Link href = {project.webLink}>
                               <a target = "_blank" className = "w-full">
-                                <button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-900 hover:bg-indigo-900/50 border-indigo-900 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-base text-xs`}>
+                                <button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-600 hover:bg-indigo-600/50 border-indigo-600 active:bg-transparent"} border font-mono rounded-md my-1 transition text-xs md:text-sm`}>
                                   Website
                                 </button>
                               </a>
                             </Link>
                             <Link href = {project.resposLink}>
                               <a target = "_blank" className = "w-full">
-                                <button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-900 hover:bg-indigo-900/50 border-indigo-900 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-base text-xs`}>
+                                <button type = "text" className = {`w-[100%] py-[5px] ${project.pinned ? "bg-amber-600 hover:bg-amber-600/50 border-amber-900 active:bg-transparent":"bg-indigo-600 hover:bg-indigo-600/50 border-indigo-600 active:bg-transparent"} border font-mono rounded-md my-1 transition md:text-sm text-xs`}>
                                   Git
                                 </button>
                               </a>
@@ -88,7 +86,7 @@ const Experience = ({animate, experienceRef}) => (
                           <p className = "my-2 text-base text-gray-300">{project.about}</p>
                           <div className = "flex flex-wrap items-center w-full gap-2 text-xs mb-[15px] mt-[10px]">
                             {project.tools.map((tool, i)=>(
-                              <p key = {i} className = {`font-bold text-gray-500 font-mono rounded-lg flex items-center justify-center`}>{tool}</p>
+                              <p key = {i} className = {`font-bold text-white font-mono rounded-sm flex items-center justify-center bg-gray-500 px-2 py-[1px]`}>{tool}</p>
                             ))}
                           </div>
                           <div className = "flex justify-between gap-x-5">

@@ -1,10 +1,10 @@
 import React from 'react'
 import {motion, AnimatePresence} from 'framer-motion'
 
-const about = ({animate, aboutRef}) => (
+const about = ({animate}) => (
   <AnimatePresence>
     {animate && (
-      <div className = "relative w-full h-[100vh] p-[100px] snap-center" ref = {aboutRef}>
+      <div className = "relative ml-auto lg:w-[80%] h-[100vh] p-[100px] section about" id = 'about'>
         <motion.div className = "flex flex-col justify-between w-full h-full"
           initial = {{opacity:0}}
           animate = {{opacity:1}}
@@ -26,7 +26,7 @@ const about = ({animate, aboutRef}) => (
                 >Hi, my name is Eduardo Sanchez</motion.p>
 
 
-                <motion.p className = "text-gray-400 text-base md:text-lg md:w-[70%]"
+                <motion.p className = "text-gray-400 text-sm md:w-[70%]"
                   initial = {{y:25, opacity:0}}
                   animate = {{y:0, opacity:1}}
                   exit = {{y:-25, opacity:0}}
