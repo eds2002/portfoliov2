@@ -1,13 +1,11 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import {motion, AnimatePresence} from 'framer-motion'
 
 const about = ({animate}) => (
   <AnimatePresence>
     {animate && (
-      <div className = "absolute top-0 md:left-[20%] left-0 right-0 bottom-0 py-[100px] px-[75px] md:px-[0]">
-        <motion.div className = "flex flex-col justify-between h-full  w-full md:w-[70%] mx-auto bg-black"
+      <div className = "relative ml-auto lg:w-[80%] h-[100vh] p-[100px] section about" id = 'about'>
+        <motion.div className = "flex flex-col justify-between w-full h-full"
           initial = {{opacity:0}}
           animate = {{opacity:1}}
           exit = {{opacity:0}}
@@ -28,7 +26,7 @@ const about = ({animate}) => (
                 >Hi, my name is Eduardo Sanchez</motion.p>
 
 
-                <motion.p className = "text-gray-400 text-base md:text-lg md:w-[70%]"
+                <motion.p className = "text-gray-400 text-sm md:w-[70%]"
                   initial = {{y:25, opacity:0}}
                   animate = {{y:0, opacity:1}}
                   exit = {{y:-25, opacity:0}}

@@ -1,5 +1,15 @@
 export const projects = [
     {
+        name: 'Bula - live ecommerce store',
+        date:'June 19, 2022',
+        about: 'A live ecommerce website using Shopify.',
+        tools:["Next", "Tailwind", "Storefront API", "Vercel"],
+        resposLink: "https://github.com/eds2002/devecom",
+        webLink:'https://www.bulamics.com',
+        featured:true,
+        type:'crud',
+    },
+    {
         name: "CRUD Blog App",
         date: 'May 26, 2022',
         about: "A fully functional Blog app. Read more on the blog site!",
@@ -8,18 +18,6 @@ export const projects = [
         webLink: 'https://blogappfrontend.vercel.app/',
         featured:true,
         type: 'crud'
-    },
-    {
-        name: "User Management System",
-        date: 'May 19, 2022',
-        about:"A user management CRUD application.",
-        tools: ["React", "Tailwind", "MySQL", "Node", "Express", "Redux"],
-        resposLink : "https://github.com/eds2002/usermanagement",
-        webLink : "https://aquamarine-dragon-f2a57c.netlify.app/",
-        featured:true,
-        type:'crud',
-        
-
     },
     {
         name: "Thousand Prompts",
@@ -55,5 +53,25 @@ export const projects = [
         resposLink: "https://github.com/eds2002/yoga-landing-page",
         webLink: "https://radiant-kulfi-361fc2.netlify.app/",
         featured:false,
+    },
+    {
+        name: "User Management System",
+        date: 'May 19, 2022',
+        about:"A user management CRUD application.",
+        tools: ["React", "Tailwind", "MySQL", "Node", "Express", "Redux"],
+        resposLink : "https://github.com/eds2002/usermanagement",
+        webLink : "https://aquamarine-dragon-f2a57c.netlify.app/",
+        featured:false,
+        type:'crud',
+    },
+    {
+        name:'My First Webstite',
+        date:'October, 22, 2021',
+        about:"Take a look at my first website and see how far I came!",
+        tools: ['HTML', 'CSS'],
+        resposLink: 'https://github.com/eds2002/my-first-website',
+        webLink:'https://willowy-pegasus-69f070.netlify.app/',
+        featured:false,
+        type:'none'
     }
 ]

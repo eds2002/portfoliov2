@@ -6,7 +6,8 @@ html,
 body {
   font-family: 'Poppins', sans-serif;
   background-color:black;
-  overflow:hidden;
+  overflow-x:hidden;
+  scroll-behavior: smooth;
 }
 
 a {
