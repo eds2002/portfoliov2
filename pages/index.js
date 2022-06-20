@@ -3,10 +3,17 @@ import Link from 'next/link'
 import About from '../components/About'
 import Hero from '../components/Hero'
 import Experience from '../components/Experience'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Contact from '../components/Contact'
+import { useInView } from 'react-intersection-observer';
 export default function Home() {
+  const heroRef = useRef()
+  const aboutRef = useRef()
+  const experienceRef = useRef()
+  const contactRef = useRef()
+  const { ref, inView, entry } = useInView(options);
+
   const [dispHome, setDispHome] = useState(true)
   const [dispAbout, setDispAbout] = useState(false);
   const [dispExperience, setDispExperience] = useState(false)
@@ -19,6 +26,20 @@ export default function Home() {
       setShowLabel(false)
     },2000)
   },[])
+
+  useEffect(()=>{
+    const observer = new IntersectionObserver((entries )=>{
+      setDispHome(entries[0]?.isIntersecting)
+      setDispAbout(entries[0]?.isIntersecting)
+      setDispExperience(entries[0]?.isIntersecting)
+      setDispContact(entries[0]?.isIntersecting)
+    })
+    observer.observe(heroRef.current)
+    observer.observe(aboutRef.current)
+    observer.observe(experienceRef.current)
+    observer.observe(contactRef.current)
+  },[])
+
 
   // Nav page switching logic
   const handleClick = (e) =>{
@@ -90,8 +111,9 @@ export default function Home() {
       </Head>
 
       {/* Body */}
-      <div className = "max-w-[1920px] mx-auto p-[100px] h-full flex relative">
-        <div className = "hidden md:w-[30%] md:block">
+      <div className = "max-w-[1920px] mx-auto h-full flex relative">
+        {/* TODO Desktop left side navigation */}
+        <div className = "hidden md:w-[30%] pl-[100px] py-[100px] md:block">
           <nav className = "flex flex-col gap-[50px]">
             <Link href = "/"><a className = {`text-sm self-start transition-all ${dispHome ? 'text-indigo-600' : 'text-gray-400'} font-mono`} onClick = {()=>handleClick("Home")}>Home</a></Link>
             <Link href = "/"><a className = {`text-sm self-start ${dispAbout ? 'text-indigo-600' : 'text-gray-400'} transition-all font-mono`} onClick = {()=>handleClick("About")}>About</a></Link>
@@ -113,16 +135,19 @@ export default function Home() {
             </div>
           </nav>
         </div>
+
         {/* Mobile Top Nav */}
-        <div className = "fixed top-0 left-0 right-0 md:hidden flex items-center justify-center h-[75px] mx-[25px] z-50 bg-[hsla(360,0%,0%,0.6)]">
+        {/* <div className = "fixed top-0 left-0 right-0 md:hidden flex items-center justify-center h-[75px] mx-[25px] z-50 bg-[hsla(360,0%,0%,0.6)]">
           <h1 className = "text-xl font-bold text-white cursor-pointer" onClick = {()=>handleClick("Home")}>Ed</h1>
-        </div>
+        </div> */}
 
         {/* Pages transition animations */}
-        <Hero animate = {dispHome}/>
-        <About animate = {dispAbout}/>
-        <Experience animate = {dispExperience}/>
-        <Contact animate = {dispContact}/>
+        <div className = "overflow-scroll snap-mandatory snap-y">
+          <Hero animate = {true} heroRef = {heroRef}/>
+          <About animate = {true} aboutRef = {aboutRef}/>
+          <Experience animate = {true} experienceRef = {experienceRef}/>
+          <Contact animate = {true} contactRef = {contactRef}/>
+        </div>
       </div>
       
       {/* Mobile Nav Right Indicitors  */}

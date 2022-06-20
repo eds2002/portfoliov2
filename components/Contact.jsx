@@ -2,11 +2,11 @@ import React from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Link from 'next/link'
 
-const Contact = ({animate}) => (
+const Contact = ({animate, contactRef}) => (
   <AnimatePresence>
     {animate && (
-      <div className = "absolute top-0 md:left-[20%] left-0 right-0 bottom-0 py-[100px] px-[75px] md:px-[0] z-[0]">
-        <motion.div className = {`h-full flex-col  w-full md:w-[70%] flex mx-auto bg-black`}
+        <div className = "relative w-full h-[100vh] p-[100px] snap-start" ref = {contactRef}>
+        <motion.div className = {`h-full flex-col  w-full flex mx-auto`}
           initial = {{opacity:0}}
           animate = {{opacity:1}}
           exit = {{opacity:0}}

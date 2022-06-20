@@ -1,13 +1,11 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import {motion, AnimatePresence} from 'framer-motion'
 
-const about = ({animate}) => (
+const about = ({animate, aboutRef}) => (
   <AnimatePresence>
     {animate && (
-      <div className = "absolute top-0 md:left-[20%] left-0 right-0 bottom-0 py-[100px] px-[75px] md:px-[0]">
-        <motion.div className = "flex flex-col justify-between h-full  w-full md:w-[70%] mx-auto bg-black"
+      <div className = "relative w-full h-[100vh] p-[100px] snap-center" ref = {aboutRef}>
+        <motion.div className = "flex flex-col justify-between w-full h-full"
           initial = {{opacity:0}}
           animate = {{opacity:1}}
           exit = {{opacity:0}}

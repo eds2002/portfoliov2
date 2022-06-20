@@ -5,11 +5,11 @@ import {motion, AnimatePresence} from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
-const Experience = ({animate}) => (
+const Experience = ({animate, experienceRef}) => (
   <AnimatePresence>
     {animate && (
-      <div className = "absolute top-0 md:left-[20%] left-0 right-0 bottom-0 py-[100px] px-[75px] md:px-[0] overflow-scroll scrollbar z-10">
-        <motion.div className = "flex flex-col md:w-[70%] h-100vh mx-auto bg-black"
+      <div className = "relative w-full p-[100px] snap-start" ref = {experienceRef}>
+        <motion.div className = "flex flex-col mx-auto"
           initial = {{opacity:0}}
           animate = {{opacity:1}}
           exit = {{opacity:0}}
